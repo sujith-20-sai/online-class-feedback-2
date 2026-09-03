@@ -12,8 +12,14 @@
 
 /* 2. ELEMENT SELECTOR & RGB BACKGROUND */
 body {
-    background-color: rgb(235, 242, 250);
+    /* Visible RGB Gradient Background: Red tone -> Green tone -> Blue tone */
+    background: rgb(240, 244, 248);
+    background: linear-gradient(135deg, rgb(254, 226, 226) 0%, rgb(220, 252, 231) 50%, rgb(224, 242, 254) 100%);
+    min-height: 100vh;
     padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 label {
