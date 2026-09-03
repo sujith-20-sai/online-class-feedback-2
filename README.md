@@ -76,8 +76,8 @@ git commit -m "Initial commit: Online Class Feedback Form with Inline, Internal,
 # 5. Rename default branch to main
 git branch -M main
 
-# 6. Add your GitHub remote repository (replace with your repo URL)
-git remote add origin https://github.com/YOUR-USERNAME/YOUR-REPOSITORY-NAME.git
+# 6. Add your GitHub remote repository (configured)
+git remote add origin https://github.com/sujith-20-sai/online-class-feedback-2.git
 
 # 7. Push code to GitHub
 git push -u origin main

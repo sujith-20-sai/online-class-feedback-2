@@ -2,19 +2,23 @@
    ONLINE CLASS FEEDBACK FORM - EXTERNAL CSS (style.css)
    ========================================================= */
 
-/* 1. UNIVERSAL SELECTOR (*) & ROOT VARIABLES */
+/* 1. UNIVERSAL SELECTOR (*) & ROOT VARIABLES (RGB / RGBA COLORS) */
 :root {
-    --primary-color: #2563eb;
-    --primary-hover: #1d4ed8;
-    --secondary-color: #64748b;
-    --success-color: #10b981;
-    --bg-gradient: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
-    --card-bg: #ffffff;
-    --text-color: #1e293b;
-    --border-color: #cbd5e1;
+    --primary-color: rgb(37, 99, 235);
+    --primary-hover: rgb(29, 78, 216);
+    --secondary-color: rgb(100, 116, 139);
+    --success-color: rgb(16, 185, 129);
+    
+    /* Background using explicit RGB functions */
+    --bg-color-base: rgb(238, 242, 255);
+    --bg-gradient: linear-gradient(135deg, rgb(224, 231, 255) 0%, rgb(243, 232, 255) 50%, rgb(254, 242, 242) 100%);
+    
+    --card-bg: rgb(255, 255, 255);
+    --text-color: rgb(30, 41, 59);
+    --border-color: rgb(203, 213, 225);
     --focus-ring: rgba(37, 99, 235, 0.25);
-    --border-radius: 10px;
-    --box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+    --border-radius: 12px;
+    --box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05), 0 0 25px rgba(99, 102, 241, 0.15);
 }
 
 * {
@@ -26,6 +30,8 @@
 
 /* 2. ELEMENT SELECTORS */
 body {
+    /* Explicit RGB background */
+    background-color: var(--bg-color-base);
     background: var(--bg-gradient);
     color: var(--text-color);
     min-height: 100vh;
