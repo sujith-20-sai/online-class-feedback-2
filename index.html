@@ -20,11 +20,12 @@
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
-        /* Element Selector: Heading */
+        /* Element Selector: Heading with rich Blue text color */
         h2 {
             text-align: center;
-            color: rgb(30, 41, 59);
+            color: rgb(30, 64, 175);
             margin-bottom: 8px;
+            font-size: 24px;
         }
 
         /* Class Selector: Button container */
@@ -41,15 +42,15 @@
         
         <h2>Online Class Feedback</h2>
         
-        <!-- 3. INLINE CSS EXAMPLE 1: Subtitle styling -->
-        <p style="text-align: center; color: rgb(100, 100, 100); font-size: 13px; margin-bottom: 20px;">
-            Please share your feedback to help us improve the class.
+        <!-- 3. INLINE CSS EXAMPLE 1: Subtitle styling with colorful text -->
+        <p style="text-align: center; color: rgb(71, 85, 105); font-size: 13.5px; margin-bottom: 20px;">
+            Please share your feedback to help us improve future classes.
         </p>
 
         <!-- Student Name -->
         <div class="form-group">
-            <label for="name">
-                Full Name:
+            <label for="name" style="color: rgb(30, 58, 138);">
+                👤 Full Name:
                 <!-- 3. INLINE CSS EXAMPLE 2: Red asterisk for required field -->
                 <span style="color: rgb(220, 38, 38); font-weight: bold;">*</span>
             </label>
@@ -58,8 +59,8 @@
 
         <!-- Student Email -->
         <div class="form-group">
-            <label for="email">
-                Email Address:
+            <label for="email" style="color: rgb(14, 116, 144);">
+                ✉️ Email Address:
                 <span style="color: rgb(220, 38, 38); font-weight: bold;">*</span>
             </label>
             <input type="email" id="email" name="email" placeholder="Enter your email" required>
@@ -67,8 +68,8 @@
 
         <!-- Course Selection -->
         <div class="form-group">
-            <label for="course">
-                Select Course:
+            <label for="course" style="color: rgb(109, 40, 217);">
+                📚 Select Course:
                 <span style="color: rgb(220, 38, 38); font-weight: bold;">*</span>
             </label>
             <select id="course" name="course" required>
@@ -79,34 +80,44 @@
             </select>
         </div>
 
-        <!-- Class Rating -->
+        <!-- Class Rating with Colorful Option Labels -->
         <div class="form-group">
-            <label>
-                Rate Today's Class:
+            <label style="color: rgb(180, 83, 9);">
+                ⭐ Rate Today's Class:
                 <span style="color: rgb(220, 38, 38); font-weight: bold;">*</span>
             </label>
             <div class="radio-group">
-                <label><input type="radio" name="rating" value="Poor" required> Poor</label>
-                <label><input type="radio" name="rating" value="Average"> Average</label>
-                <label><input type="radio" name="rating" value="Good"> Good</label>
-                <label><input type="radio" name="rating" value="Excellent"> Excellent</label>
+                <label style="color: rgb(220, 38, 38); font-weight: 600;">
+                    <input type="radio" name="rating" value="Poor" required> Poor
+                </label>
+                <label style="color: rgb(217, 119, 6); font-weight: 600;">
+                    <input type="radio" name="rating" value="Average"> Average
+                </label>
+                <label style="color: rgb(37, 99, 235); font-weight: 600;">
+                    <input type="radio" name="rating" value="Good"> Good
+                </label>
+                <label style="color: rgb(22, 163, 74); font-weight: 600;">
+                    <input type="radio" name="rating" value="Excellent"> Excellent
+                </label>
             </div>
         </div>
 
         <!-- Comments / Suggestions -->
         <div class="form-group">
-            <label for="comments">Suggestions / Feedback:</label>
+            <label for="comments" style="color: rgb(15, 118, 110);">
+                💬 Suggestions / Feedback:
+            </label>
             <textarea id="comments" name="comments" placeholder="Write your comments here..."></textarea>
         </div>
 
         <!-- Submit & Reset Buttons -->
         <div class="btn-box">
-            <!-- 3. INLINE CSS EXAMPLE 3: Button color styling -->
-            <button type="submit" class="btn" style="background-color: rgb(37, 99, 235); color: rgb(255, 255, 255);">
-                Submit Feedback
+            <!-- 3. INLINE CSS EXAMPLE 3: Button text and background color -->
+            <button type="submit" class="btn" style="background-color: rgb(37, 99, 235); color: rgb(255, 255, 255); font-weight: bold;">
+                🚀 Submit Feedback
             </button>
-            <button type="reset" class="btn btn-reset">
-                Reset
+            <button type="reset" class="btn btn-reset" style="color: rgb(71, 85, 105); font-weight: bold;">
+                🔄 Reset
             </button>
         </div>
 

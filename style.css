@@ -54,7 +54,7 @@ label {
     margin-left: 10px;
 }
 
-/* 4. ATTRIBUTE SELECTORS */
+/* 4. ATTRIBUTE SELECTORS WITH TEXT COLOR */
 input[type="text"],
 input[type="email"],
 select,
@@ -64,11 +64,18 @@ textarea {
     border: 1px solid rgb(204, 204, 204);
     border-radius: 4px;
     font-size: 14px;
+    color: rgb(30, 41, 59);
 }
 
 textarea {
     height: 80px;
     resize: vertical;
+}
+
+/* Placeholder Text Color */
+::placeholder {
+    color: rgb(156, 163, 175);
+    font-style: italic;
 }
 
 /* 5. PSEUDO-CLASS SELECTORS (:focus, :hover) */
