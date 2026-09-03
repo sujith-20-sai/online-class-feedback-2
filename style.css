@@ -1,207 +1,85 @@
-/* =========================================================
-   ONLINE CLASS FEEDBACK FORM - EXTERNAL CSS (style.css)
-   ========================================================= */
+/* ==========================================
+   ONLINE CLASS FEEDBACK FORM - EXTERNAL CSS
+   ========================================== */
 
-/* 1. UNIVERSAL SELECTOR (*) & ROOT VARIABLES (RGB / RGBA COLORS) */
-:root {
-    --primary-color: rgb(37, 99, 235);
-    --primary-hover: rgb(29, 78, 216);
-    --secondary-color: rgb(100, 116, 139);
-    --success-color: rgb(16, 185, 129);
-    
-    /* Background using explicit RGB functions */
-    --bg-color-base: rgb(238, 242, 255);
-    --bg-gradient: linear-gradient(135deg, rgb(224, 231, 255) 0%, rgb(243, 232, 255) 50%, rgb(254, 242, 242) 100%);
-    
-    --card-bg: rgb(255, 255, 255);
-    --text-color: rgb(30, 41, 59);
-    --border-color: rgb(203, 213, 225);
-    --focus-ring: rgba(37, 99, 235, 0.25);
-    --border-radius: 12px;
-    --box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05), 0 0 25px rgba(99, 102, 241, 0.15);
-}
-
+/* 1. UNIVERSAL SELECTOR (*) */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-/* 2. ELEMENT SELECTORS */
+/* 2. ELEMENT SELECTOR & RGB BACKGROUND */
 body {
-    /* Explicit RGB background */
-    background-color: var(--bg-color-base);
-    background: var(--bg-gradient);
-    color: var(--text-color);
-    min-height: 100vh;
-    padding: 40px 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: rgb(235, 242, 250);
+    padding: 20px;
 }
 
 label {
     display: block;
-    font-weight: 600;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     font-size: 14px;
-    color: #334155;
+    font-weight: bold;
+    color: rgb(50, 50, 50);
 }
 
-select, textarea {
-    width: 100%;
-    padding: 12px 14px;
-    border: 1.5px solid var(--border-color);
-    border-radius: var(--border-radius);
-    font-size: 14px;
-    transition: all 0.3s ease;
-    background-color: #f8fafc;
+/* 3. CLASS SELECTORS */
+.form-group {
+    margin-bottom: 16px;
 }
 
-textarea {
-    resize: vertical;
-    min-height: 100px;
-}
-
-/* 3. ID SELECTOR */
-#feedback-form {
-    background: var(--card-bg);
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-    padding: 35px 30px;
-    max-width: 650px;
-    width: 100%;
-}
-
-#rating-options {
+.radio-group {
     display: flex;
     gap: 15px;
-    flex-wrap: wrap;
     margin-top: 5px;
 }
 
-/* 4. CLASS SELECTORS */
-.form-title-group {
-    text-align: center;
-    margin-bottom: 25px;
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-row {
-    display: flex;
-    gap: 20px;
-}
-
-.btn-container {
-    display: flex;
-    gap: 15px;
-    margin-top: 25px;
+.radio-group label {
+    font-weight: normal;
+    cursor: pointer;
 }
 
 .btn {
-    flex: 1;
-    padding: 13px 20px;
-    font-size: 15px;
-    font-weight: 600;
+    padding: 10px 18px;
     border: none;
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    transition: all 0.25s ease;
-}
-
-.btn-primary {
-    background-color: var(--primary-color);
-    color: #ffffff;
-}
-
-.btn-secondary {
-    background-color: #e2e8f0;
-    color: #475569;
-}
-
-/* 5. ATTRIBUTE SELECTORS */
-input[type="text"],
-input[type="email"] {
-    width: 100%;
-    padding: 12px 14px;
-    border: 1.5px solid var(--border-color);
-    border-radius: var(--border-radius);
+    border-radius: 4px;
     font-size: 14px;
-    background-color: #f8fafc;
-    transition: all 0.3s ease;
-}
-
-input[type="radio"],
-input[type="checkbox"] {
-    accent-color: var(--primary-color);
-    width: 18px;
-    height: 18px;
     cursor: pointer;
 }
 
-/* 6. COMBINATOR SELECTORS */
-/* Child Combinator (parent > child) */
-.radio-pill-group > label {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    cursor: pointer;
-    background: #f1f5f9;
-    padding: 10px 16px;
-    border-radius: 20px;
-    border: 1px solid var(--border-color);
-    transition: all 0.2s ease;
-    font-weight: 500;
+.btn-reset {
+    background-color: rgb(220, 220, 220);
+    color: rgb(51, 51, 51);
+    margin-left: 10px;
 }
 
-/* Descendant Combinator */
-.checkbox-grid .checkbox-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 8px;
+/* 4. ATTRIBUTE SELECTORS */
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 4px;
+    font-size: 14px;
 }
 
-/* 7. PSEUDO-CLASS SELECTORS */
+textarea {
+    height: 80px;
+    resize: vertical;
+}
+
+/* 5. PSEUDO-CLASS SELECTORS (:focus, :hover) */
 input[type="text"]:focus,
 input[type="email"]:focus,
 select:focus,
 textarea:focus {
     outline: none;
-    border-color: var(--primary-color);
-    background-color: #ffffff;
-    box-shadow: 0 0 0 4px var(--focus-ring);
+    border-color: rgb(0, 102, 204);
 }
 
-.btn-primary:hover {
-    background-color: var(--primary-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
-}
-
-.btn-secondary:hover {
-    background-color: #cbd5e1;
-    transform: translateY(-2px);
-}
-
-/* :checked Pseudo-class */
-.radio-pill-group input[type="radio"]:checked + span {
-    font-weight: 700;
-    color: var(--primary-color);
-}
-
-/* :nth-child() Pseudo-class */
-.radio-pill-group label:nth-child(even) {
-    background-color: #f8fafc;
-}
-
-/* 8. PSEUDO-ELEMENT SELECTORS */
-input::placeholder,
-textarea::placeholder {
-    color: #94a3b8;
-    font-style: italic;
+.btn:hover {
+    opacity: 0.9;
 }

@@ -5,250 +5,111 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Class Feedback Form</title>
 
-    <!-- ======================================================== -->
-    <!-- 1. EXTERNAL CSS: Linked from style.css                    -->
-    <!-- ======================================================== -->
+    <!-- 1. EXTERNAL CSS -->
     <link rel="stylesheet" href="style.css">
 
-    <!-- ======================================================== -->
-    <!-- 2. INTERNAL CSS: Written inside <style> tags             -->
-    <!-- ======================================================== -->
+    <!-- 2. INTERNAL CSS -->
     <style>
-        /* Internal CSS - Keyframe Animation */
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(25px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        /* ID Selector: Form container box */
+        #feedbackForm {
+            background-color: rgb(255, 255, 255);
+            max-width: 480px;
+            margin: 30px auto;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
-        /* Internal CSS - ID Selector with Animation */
-        #feedback-form {
-            animation: slideInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-
-        /* Internal CSS - Header styling */
-        .form-header {
+        /* Element Selector: Heading */
+        h2 {
             text-align: center;
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 20px;
-            margin-bottom: 25px;
+            color: rgb(30, 41, 59);
+            margin-bottom: 8px;
         }
 
-        .form-header h1 {
-            font-size: 26px;
-            color: #0f172a;
-            letter-spacing: -0.5px;
-            margin-top: 6px;
-        }
-
-        .form-header p {
-            color: #64748b;
-            font-size: 14px;
-            margin-top: 4px;
-        }
-
-        /* Internal CSS - Section Divider */
-        .section-heading {
-            font-size: 16px;
-            font-weight: 700;
-            color: #334155;
-            margin: 25px 0 15px 0;
-            padding-bottom: 6px;
-            border-bottom: 1.5px dashed #cbd5e1;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        /* Internal CSS - Responsive Media Queries */
-        @media (max-width: 600px) {
-            .form-row {
-                flex-direction: column;
-                gap: 0;
-            }
-
-            #feedback-form {
-                padding: 24px 18px;
-            }
-
-            .btn-container {
-                flex-direction: column;
-            }
+        /* Class Selector: Button container */
+        .btn-box {
+            margin-top: 20px;
+            text-align: center;
         }
     </style>
 </head>
 <body>
 
-    <!-- Main Feedback Form Container with ID Selector -->
-    <form id="feedback-form" action="#" method="POST">
+    <!-- Main Form with ID Selector -->
+    <form id="feedbackForm" action="#" method="POST">
         
-        <!-- Form Header -->
-        <div class="form-header">
-            <!-- 3. INLINE CSS EXAMPLE 1: Badge Style -->
-            <span style="display: inline-block; background-color: #dbeafe; color: #1e40af; font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 9999px; letter-spacing: 0.5px; text-transform: uppercase;">
-                Interactive Session
-            </span>
-            <h1>Online Class Feedback Form</h1>
-            <p>Please share your valuable feedback to help us improve future classes.</p>
+        <h2>Online Class Feedback</h2>
+        
+        <!-- 3. INLINE CSS EXAMPLE 1: Subtitle styling -->
+        <p style="text-align: center; color: rgb(100, 100, 100); font-size: 13px; margin-bottom: 20px;">
+            Please share your feedback to help us improve the class.
+        </p>
+
+        <!-- Student Name -->
+        <div class="form-group">
+            <label for="name">
+                Full Name:
+                <!-- 3. INLINE CSS EXAMPLE 2: Red asterisk for required field -->
+                <span style="color: rgb(220, 38, 38); font-weight: bold;">*</span>
+            </label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
         </div>
 
-        <!-- 3. INLINE CSS EXAMPLE 2: Notice Banner using RGB and RGBA -->
-        <div style="background-color: rgba(34, 197, 94, 0.1); border-left: 4px solid rgb(34, 197, 94); padding: 12px 15px; border-radius: 6px; margin-bottom: 22px; font-size: 13.5px; color: rgb(21, 128, 61); line-height: 1.5;">
-            💡 <strong>Quick Note:</strong> All answers will be used to enhance your online learning experience.
+        <!-- Student Email -->
+        <div class="form-group">
+            <label for="email">
+                Email Address:
+                <span style="color: rgb(220, 38, 38); font-weight: bold;">*</span>
+            </label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
         </div>
 
-        <!-- Section 1: Student & Class Details -->
-        <div class="section-heading">
-            <span>👤</span> Student & Course Info
+        <!-- Course Selection -->
+        <div class="form-group">
+            <label for="course">
+                Select Course:
+                <span style="color: rgb(220, 38, 38); font-weight: bold;">*</span>
+            </label>
+            <select id="course" name="course" required>
+                <option value="">-- Choose your course --</option>
+                <option value="web-dev">Web Development (HTML, CSS, JS)</option>
+                <option value="python">Python Programming</option>
+                <option value="java">Java Full Stack</option>
+            </select>
         </div>
 
-        <div class="form-row">
-            <!-- Full Name (Element + Attribute Selectors apply from style.css) -->
-            <div class="form-group" style="flex: 1;">
-                <label for="student-name">
-                    Student Full Name
-                    <!-- 3. INLINE CSS EXAMPLE 3: Required indicator asterisk using RGB -->
-                    <span style="color: rgb(239, 68, 68); font-weight: bold; margin-left: 2px;">*</span>
-                </label>
-                <input type="text" id="student-name" name="student_name" placeholder="Enter your full name" required>
-            </div>
-
-            <!-- Email Address -->
-            <div class="form-group" style="flex: 1;">
-                <label for="student-email">
-                    Email Address
-                    <span style="color: #ef4444; font-weight: bold; margin-left: 2px;">*</span>
-                </label>
-                <input type="email" id="student-email" name="student_email" placeholder="e.g., student@example.com" required>
-            </div>
-        </div>
-
-        <div class="form-row">
-            <!-- Course Name Dropdown -->
-            <div class="form-group" style="flex: 1;">
-                <label for="course-select">
-                    Course / Subject
-                    <span style="color: #ef4444; font-weight: bold; margin-left: 2px;">*</span>
-                </label>
-                <select id="course-select" name="course_name" required>
-                    <option value="" disabled selected>-- Select Your Course --</option>
-                    <option value="fullstack">Full Stack Web Development</option>
-                    <option value="python">Python & Machine Learning</option>
-                    <option value="data-science">Data Science with SQL & PowerBI</option>
-                    <option value="cloud-computing">Cloud Computing & DevOps</option>
-                </select>
-            </div>
-
-            <!-- Instructor Name -->
-            <div class="form-group" style="flex: 1;">
-                <label for="instructor-name">Instructor Name</label>
-                <input type="text" id="instructor-name" name="instructor_name" placeholder="e.g., Dr. Rajesh Sharma">
-            </div>
-        </div>
-
-        <!-- Section 2: Class Evaluation -->
-        <div class="section-heading">
-            <span>⭐</span> Session Evaluation
-        </div>
-
-        <!-- Overall Rating (Radio Buttons styled with Child Combinators & Pseudo Classes) -->
+        <!-- Class Rating -->
         <div class="form-group">
             <label>
-                Overall Satisfaction Rating
-                <span style="color: #ef4444; font-weight: bold; margin-left: 2px;">*</span>
+                Rate Today's Class:
+                <span style="color: rgb(220, 38, 38); font-weight: bold;">*</span>
             </label>
-            <div id="rating-options" class="radio-pill-group">
-                <label>
-                    <input type="radio" name="overall_rating" value="1" required>
-                    <span>1 - Poor</span>
-                </label>
-                <label>
-                    <input type="radio" name="overall_rating" value="2">
-                    <span>2 - Fair</span>
-                </label>
-                <label>
-                    <input type="radio" name="overall_rating" value="3">
-                    <span>3 - Good</span>
-                </label>
-                <label>
-                    <input type="radio" name="overall_rating" value="4">
-                    <span>4 - Very Good</span>
-                </label>
-                <label>
-                    <input type="radio" name="overall_rating" value="5">
-                    <span>5 - Excellent</span>
-                </label>
+            <div class="radio-group">
+                <label><input type="radio" name="rating" value="Poor" required> Poor</label>
+                <label><input type="radio" name="rating" value="Average"> Average</label>
+                <label><input type="radio" name="rating" value="Good"> Good</label>
+                <label><input type="radio" name="rating" value="Excellent"> Excellent</label>
             </div>
         </div>
 
-        <!-- Pace of Class (Radio group) -->
+        <!-- Comments / Suggestions -->
         <div class="form-group">
-            <label>Class Pace</label>
-            <div class="radio-pill-group" style="display: flex; gap: 15px; flex-wrap: wrap;">
-                <label>
-                    <input type="radio" name="class_pace" value="too_slow">
-                    <span>Too Slow</span>
-                </label>
-                <label>
-                    <input type="radio" name="class_pace" value="just_right" checked>
-                    <span>Just Right</span>
-                </label>
-                <label>
-                    <input type="radio" name="class_pace" value="too_fast">
-                    <span>Too Fast</span>
-                </label>
-            </div>
+            <label for="comments">Suggestions / Feedback:</label>
+            <textarea id="comments" name="comments" placeholder="Write your comments here..."></textarea>
         </div>
 
-        <!-- Positive Aspects (Checkboxes with Descendant Combinator) -->
-        <div class="form-group">
-            <label>What aspects did you find most helpful? (Check all that apply)</label>
-            <div class="checkbox-grid">
-                <div class="checkbox-item">
-                    <input type="checkbox" id="check-slides" name="helpful_aspects" value="slides">
-                    <label for="check-slides" style="margin-bottom: 0; font-weight: normal; cursor: pointer;">Clear Presentation & Slides</label>
-                </div>
-                <div class="checkbox-item">
-                    <input type="checkbox" id="check-practical" name="helpful_aspects" value="practical">
-                    <label for="check-practical" style="margin-bottom: 0; font-weight: normal; cursor: pointer;">Hands-on Code Examples</label>
-                </div>
-                <div class="checkbox-item">
-                    <input type="checkbox" id="check-qa" name="helpful_aspects" value="qa">
-                    <label for="check-qa" style="margin-bottom: 0; font-weight: normal; cursor: pointer;">Doubt Clarification / Q&A</label>
-                </div>
-                <div class="checkbox-item">
-                    <input type="checkbox" id="check-tech" name="helpful_aspects" value="tech">
-                    <label for="check-tech" style="margin-bottom: 0; font-weight: normal; cursor: pointer;">Audio & Video Streaming Quality</label>
-                </div>
-            </div>
-        </div>
-
-        <!-- Detailed Feedback Textarea -->
-        <div class="form-group">
-            <label for="comments">Suggestions or Additional Comments</label>
-            <textarea id="comments" name="comments" placeholder="Tell us what you liked and how we can make our sessions even better..."></textarea>
-        </div>
-
-        <!-- Action Buttons -->
-        <div class="btn-container">
-            <!-- 3. INLINE CSS EXAMPLE 4: Button with inline gradient and shadow accent -->
-            <button type="submit" class="btn btn-primary" style="box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);">
-                🚀 Submit Feedback
+        <!-- Submit & Reset Buttons -->
+        <div class="btn-box">
+            <!-- 3. INLINE CSS EXAMPLE 3: Button color styling -->
+            <button type="submit" class="btn" style="background-color: rgb(37, 99, 235); color: rgb(255, 255, 255);">
+                Submit Feedback
             </button>
-            <button type="reset" class="btn btn-secondary">
-                🔄 Reset
+            <button type="reset" class="btn btn-reset">
+                Reset
             </button>
         </div>
 
-        <!-- 3. INLINE CSS EXAMPLE 5: Footer Security/Privacy Note -->
-        <p style="text-align: center; color: #94a3b8; font-size: 12.5px; margin-top: 22px; display: flex; align-items: center; justify-content: center; gap: 5px;">
-            🔒 <span>Your feedback is securely submitted and protected.</span>
-        </p>
     </form>
 
 </body>
